@@ -53,8 +53,10 @@ func resourcePostgreSQLDefaultPrivileges() *schema.Resource {
 				ValidateFunc: validation.StringInSlice([]string{
 					"table",
 					"sequence",
+					"type",
+					"function",
 				}, false),
-				Description: "The PostgreSQL object type to set the default privileges on (one of: table, sequence)",
+				Description: "The PostgreSQL object type to set the default privileges on (one of: table, sequence, type, function)",
 			},
 			"privileges": &schema.Schema{
 				Type:        schema.TypeSet,
